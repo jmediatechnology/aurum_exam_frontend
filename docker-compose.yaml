@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+
+    node:
+        build:
+            context: './.docker/node/'
+        user: 'node'
+        working_dir: '/app'
+        stdin_open: true
+        tty: true
+        volumes:
+            - './:/app'
+        ports:
+            - '3000:3000'
